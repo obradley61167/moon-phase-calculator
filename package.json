@@ -1,6 +1,6 @@
 {
   "name": "moon-phase-calculator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Determines the lunar phase and illumination percentage for a given date by computing the synodic cycle position relative to a known new moon epoch.",
   "type": "module",
   "main": "src/index.js",
