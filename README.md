@@ -34,3 +34,10 @@ The model: elapsed time since the verified new moon of 2000-01-06 18:14 UTC, red
 - **Illumination is geometric, not atmospheric.** It reports the illuminated fraction of the disk; apparent magnitude, libration, and atmospheric extinction are out of scope.
 
 The input is UTC milliseconds since the Unix epoch. Pass a deterministic value (`Date.UTC(...)` or a literal) if you need reproducible output.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
